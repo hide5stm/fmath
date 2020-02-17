@@ -132,7 +132,7 @@ struct Code : public Xbyak::CodeGenerator {
 		vminps(zm0, maxX);
 		vmaxps(zm0, minX);
 		vmulps(zm0, log2_e);
-		vrndscaleps(zm1, zm0, 0); // n = floor(x)
+		vrndscaleps(zm1, zm0, 0); // n = round(x)
 		vsubps(zm0, zm1); // a
 		vcvtps2dq(zm1, zm1);
 		vmulps(zm0, log2);
